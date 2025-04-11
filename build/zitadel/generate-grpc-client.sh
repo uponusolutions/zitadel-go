@@ -98,6 +98,8 @@ protoc \
     --go_opt=Mzitadel/user/v2/query.proto=${ZITADEL_IMPORT}/user/v2 \
     --go_opt=Mzitadel/user/v2/user.proto=${ZITADEL_IMPORT}/user/v2 \
     --go_opt=Mzitadel/user/v2/user_service.proto=${ZITADEL_IMPORT}/user/v2 \
+    --go_opt=Mzitadel/webkey/v2beta/webkey_service.proto=${ZITADEL_IMPORT}/webkey/v2beta \
+    --go_opt=Mzitadel/feature/v2/feature_service.proto=${ZITADEL_IMPORT}/feature/v2 \
     --go_out /go/src \
     --go-grpc_out /go/src \
     $(find /proto/include/zitadel -iname *.proto)
