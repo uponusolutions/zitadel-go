@@ -83,7 +83,7 @@ RUN ./build/zitadel/generate-grpc-client.sh ${PROJECT_PATH} \
     && mv /go/src/github.com/zitadel/zitadel/pkg/grpc/org/v2beta/*.pb.go /zitadel-api/go/src/${PROJECT_PATH}/zitadel/org/v2beta/ \
     && mv /go/src/github.com/zitadel/zitadel/pkg/grpc/settings/v2beta/*.pb.go /zitadel-api/go/src/${PROJECT_PATH}/zitadel/settings/v2beta/ \
     && mv /go/src/github.com/zitadel/zitadel/pkg/grpc/user/v2beta/*.pb.go /zitadel-api/go/src/${PROJECT_PATH}/zitadel/user/v2beta/ \
-    && mv /go/src/github.com/zitadel/zitadel/pkg/grpc/resources/webkey/v3alpha/*.pb.go /zitadel-api/go/src/${PROJECT_PATH}/zitadel/webkey/v2beta/ \
+    && mv /go/src/github.com/zitadel/zitadel/pkg/grpc/resources/webkey/v3alpha/*.pb.go /zitadel-api/go/src/${PROJECT_PATH}/zitadel/resources/webkey/v3alpha/ \
 
     # v2 packages
     && mv /go/src/github.com/zitadel/zitadel/pkg/grpc/session/v2/*.pb.go /zitadel-api/go/src/${PROJECT_PATH}/zitadel/session/v2/ \
