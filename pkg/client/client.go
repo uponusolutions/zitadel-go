@@ -8,6 +8,9 @@ import (
 
 	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/admin"
 	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/auth"
+	featureV2 "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/feature/v2"
+	webkeyV3 "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/resources/webkey/v3alpha"
+
 	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/management"
 	oidcV2_pb "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/oidc/v2"
 	oidcV2Beta_pb "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/oidc/v2beta"
@@ -63,6 +66,8 @@ type Client struct {
 	organizationServiceV2 orgV2.OrganizationServiceClient
 	oidcService           oidcV2Beta_pb.OIDCServiceClient
 	oidcServiceV2         oidcV2_pb.OIDCServiceClient
+	featureV2             featureV2.FeatureServiceClient
+	webkeyV3              webkeyV3.ZITADELWebKeysClient
 }
 
 func New(ctx context.Context, zitadel *zitadel.Zitadel, opts ...Option) (*Client, error) {
@@ -129,6 +134,20 @@ func (c *Client) ManagementService() management.ManagementServiceClient {
 		c.managementService = management.NewManagementServiceClient(c.connection)
 	}
 	return c.managementService
+}
+
+func (c *Client) FeatureServiceV2() featureV2.FeatureServiceClient {
+	if c.featureV2 == nil {
+		c.featureV2 = featureV2.NewFeatureServiceClient(c.connection)
+	}
+	return c.featureV2
+}
+
+func (c *Client) WebkeyServiceV3() webkeyV3.ZITADELWebKeysClient {
+	if c.webkeyV3 == nil {
+		c.webkeyV3 = webkeyV3.NewZITADELWebKeysClient(c.connection)
+	}
+	return c.webkeyV3
 }
 
 func (c *Client) AuthService() auth.AuthServiceClient {

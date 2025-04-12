@@ -9,7 +9,7 @@ import (
 
 type Client struct {
 	Connection *zitadel.Connection
-	webkey.WebkeyServiceClient
+	webkey.ZITADELWebKeysClient
 }
 
 func NewClient(ctx context.Context, issuer, api string, scopes []string, options ...zitadel.Option) (*Client, error) {
@@ -19,7 +19,7 @@ func NewClient(ctx context.Context, issuer, api string, scopes []string, options
 	}
 
 	return &Client{
-		Connection:        conn,
-		WebkeyServiceClient: webkey.NewWebkeyServiceClient(conn.ClientConn),
+		Connection:           conn,
+		ZITADELWebKeysClient: webkey.NewZITADELWebKeysClient(conn.ClientConn),
 	}, nil
 }

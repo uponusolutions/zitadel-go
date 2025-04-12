@@ -104,6 +104,8 @@ protoc \
     --go_opt=Mzitadel/feature/v2/instance.proto=${ZITADEL_IMPORT}/feature/v2 \
     --go_opt=Mzitadel/feature/v2/feature.proto=${ZITADEL_IMPORT}/feature/v2 \
     --go_opt=Mzitadel/feature/v2/feature_service.proto=${ZITADEL_IMPORT}/feature/v2 \
+    --go_opt=Mzitadel/object/v3alpha/object.proto=${ZITADEL_IMPORT}/object/v3alpha \
+    --go_opt=Mzitadel/resources/object/v3alpha/object.proto=${ZITADEL_IMPORT}/resources/object/v3alpha \
     --go_opt=Mzitadel/resources/webkey/v3alpha/config.proto=${ZITADEL_IMPORT}/resources/webkey/v3alpha \
     --go_opt=Mzitadel/resources/webkey/v3alpha/key.proto=${ZITADEL_IMPORT}/resources/webkey/v3alpha \
     --go_opt=Mzitadel/resources/webkey/v3alpha/webkey_service.proto=${ZITADEL_IMPORT}/resources/webkey/v3alpha \

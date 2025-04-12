@@ -7,7 +7,7 @@
 package webkey
 
 import (
-	v3alpha "github.com/zitadel/zitadel/pkg/grpc/resources/object/v3alpha"
+	v3alpha "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/resources/object/v3alpha"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	_ "google.golang.org/protobuf/types/known/timestamppb"
